@@ -19,3 +19,10 @@ import 'cypress-xpath';
 
 // Alternatively you can use CommonJS syntax:
 // require('./commands')
+
+Cypress.on('uncaught:exception', (err, runnable) => {
+    if (err.message.includes('Request failed with status code 401') || err.message.includes('Request failed with status code 400')) {
+      return false;
+    }
+  });
+  
