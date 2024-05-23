@@ -15,20 +15,20 @@ Given('user in login screen', async function () {
 });
 
 When('user enter the email and password', async function () {
-  await login.fillLoginCredentials(testData.user_email, testData.user_password);
+   login.fillLoginCredentials(testData.user_email, testData.user_password);
 });
 
 
 When("user enter the {string} and {string}", async function (email, password) {
-  await login.fillLoginCredentials(email, password);
+   login.fillLoginCredentials(email, password);
 })
 
 When("user enter the wrong {string} and {string}", async function (email, password) {
-  await login.enterEmailAndPassword(email, password)
+  login.enterEmailAndPassword(email, password)
 })
 
 Then("Verify the textbox {string}", async function (expectedText) {
-  await login.validateTextMessage(expectedText);
+  login.validateTextMessage(expectedText);
 })
 
 Then('Verify popup {string}', async function (expectedText) {

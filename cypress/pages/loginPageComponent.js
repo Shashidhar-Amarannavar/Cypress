@@ -1,7 +1,5 @@
 
-export default class LoginPageComponents {
-
-    
+export default class LoginPageComponents {  
 
     locators = {
         button: {
@@ -55,12 +53,9 @@ export default class LoginPageComponents {
 
     validateTextMessage(expectedText) {
         try {
-            // cy.xpath(this.locators.textField.emailValidation).contains(expectedText);
             expect(this.actualText).contain(expectedText)
         } catch (error) {
-            // cy.xpath(this.locators.textField.passwordValidation).contains(expectedText);
             expect(this.actualText).contain(expectedText)
-            // cy.get('#password-helper-text > span').contains(expectedText)
         }
     }
 }
