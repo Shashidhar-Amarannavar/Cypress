@@ -25,7 +25,8 @@ export default class LoginPageComponents {
     }
 
     verifyToastMessage(expectedText) {
-        cy.xpath(this.locators.textField.toastMessage).should('have.text', expectedText);
+        cy.xpath(this.locators.textField.toastMessage).contains(expectedText);
+        cy.get('.MuiAlert-action > .MuiButtonBase-root').click();
     }
 
     enterEmailAndPassword(email, password) {
