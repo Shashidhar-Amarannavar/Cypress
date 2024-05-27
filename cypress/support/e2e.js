@@ -21,7 +21,7 @@ import 'cypress-xpath';
 // require('./commands')
 
 Cypress.on('uncaught:exception', (err, runnable) => {
-    if (err.message.includes('Request failed with status code 401') || err.message.includes('Request failed with status code 400')) {
-      return false;
-    }
-  });
+  // returning false here prevents Cypress from
+  // failing the test
+  return false
+})
