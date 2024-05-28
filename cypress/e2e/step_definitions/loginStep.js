@@ -24,7 +24,7 @@ When("user enter the {string} and {string}", async function (email, password) {
 })
 
 When("user enter the wrong {string} and {string}", async function (email, password) {
-  login.enterEmailAndPassword(email, password)
+  login.enterEmailAndPassword(email, password);
 })
 
 Then("Verify the textbox {string}", async function (expectedText) {

@@ -16,7 +16,7 @@ When('click on signUp button', async function () {
 });
 
 When('navigate to back', async function () {
-    cy.go("back")
+    cy.go("back");
 });
 
 When('remove values from all textbox', async function () {

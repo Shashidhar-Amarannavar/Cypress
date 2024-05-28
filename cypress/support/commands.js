@@ -23,3 +23,9 @@
 //
 // -- This will overwrite an existing command --
 // Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
+
+Cypress.Commands.add('textfieldValidation', (selector, expectedText) => {
+    cy.xpath(selector).invoke('text').then((text) => {
+        expect(text.trim()).to.equal(expectedText);
+    })
+});
