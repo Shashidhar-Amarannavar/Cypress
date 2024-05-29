@@ -1,5 +1,5 @@
 
-export default class LoginPageComponents {  
+export default class LoginPageComponents {
 
     locators = {
         button: {
@@ -26,7 +26,7 @@ export default class LoginPageComponents {
     }
 
     verifyToastMessage(expectedText) {
-        cy.textfieldValidation(this.locators.textField.toastMessage,expectedText);
+        cy.textfieldValidation(this.locators.textField.toastMessage, expectedText);
         cy.get(this.locators.button.closeToastMessage).click();
     }
 
@@ -61,7 +61,7 @@ export default class LoginPageComponents {
         }
     }
 
-    clickForgotPassword(email){
+    clickForgotPassword(email) {
         cy.xpath(this.locators.link.forgotPassword).click();
         cy.xpath(this.locators.textField.email).click();
         cy.xpath(this.locators.textField.email).type(email);
@@ -71,7 +71,7 @@ export default class LoginPageComponents {
         cy.textfieldValidation(this.locators.textField.emailValidation, expectedText);
     }
 
-    clickOnReset(){
+    clickOnReset() {
         cy.xpath(this.locators.button.restPassword).click();
     }
 
