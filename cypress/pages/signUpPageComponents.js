@@ -31,7 +31,7 @@ export default class LoginPageComponents {
         }
     }
 
-    async signUpForm(email, passwords) {
+    signUpForm(email, passwords) {
         cy.log(email + " " + passwords);
         cy.xpath(this.locators.textField.emailId).type(firstName + lastName + email);
         cy.xpath(this.locators.textField.firstName).type(firstName);
@@ -40,7 +40,7 @@ export default class LoginPageComponents {
         cy.xpath(this.locators.textField.confirmPassword).type(firstName + passwords);
     }
 
-    async enterInvalidData(email, firstname, lastname, passwords) {
+    enterInvalidData(email, firstname, lastname, passwords) {
         cy.xpath(this.locators.textField.emailId).type(email);
         cy.xpath(this.locators.textField.firstName).type(firstname);
         cy.xpath(this.locators.textField.lastName).type(lastname);
@@ -48,7 +48,7 @@ export default class LoginPageComponents {
         cy.xpath(this.locators.textField.confirmPassword).type(passwords + "#123");
     }
 
-    async clickOnSignup() {
+    clickOnSignup() {
         cy.xpath(this.locators.link.signUp).click();
         firstName = faker.person.firstName();
         lastName = faker.person.lastName();
@@ -58,7 +58,7 @@ export default class LoginPageComponents {
         cy.xpath(this.locators.button.signUp).click();
     }
 
-    async clearTextfields() {
+    clearTextfields() {
         cy.xpath(this.locators.textField.emailId).clear();
         cy.xpath(this.locators.textField.firstName).clear();
         cy.xpath(this.locators.textField.lastName).clear();
@@ -66,7 +66,7 @@ export default class LoginPageComponents {
         cy.xpath(this.locators.textField.confirmPassword).clear();
     }
 
-    async validateMessage() {
+    validateMessage() {
         cy.textfieldValidation(this.locators.validate.email, 'Please enter your email');
         cy.textfieldValidation(this.locators.validate.firstName, 'Please enter your first name');
         cy.textfieldValidation(this.locators.validate.lastname, 'Please enter your last name');
@@ -74,7 +74,7 @@ export default class LoginPageComponents {
         cy.textfieldValidation(this.locators.validate.confirmPassword, 'Please enter your confirm password');
     }
 
-    async invalidMessage() {
+    invalidMessage() {
         cy.textfieldValidation(this.locators.validate.email, 'Please enter a valid email address');
         cy.textfieldValidation(this.locators.validate.firstName, 'Please enter valid first name');
         cy.textfieldValidation(this.locators.validate.lastname, 'Please enter valid last name');
