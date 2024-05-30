@@ -6,3 +6,4 @@ When('create new organization {string},{string} and {string}', async function (o
   organizationScreen.createNewOrg(orgName, description, path);
 
 });
+
