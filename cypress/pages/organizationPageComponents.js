@@ -31,10 +31,22 @@ export default class organizationPageComponents {
         }
         cy.xpath(this.locators.textField.orgName).type(orgName);
         cy.xpath(this.locators.textField.orgDescription).type(description);
-        if(path){
+        if (path) {
             cy.xpath('//input[@type="file"]').attachFile(path);
         }
         cy.xpath(this.locators.button.submit).click();
     }
 
+    editOrganizationName(oldName, newName, description) {
+        cy.xpath(`//p[text()='${oldName}']/../../..//div//p[text()='Edit']`).click();
+        cy.xpath(this.locators.textField.orgName).clear();
+        cy.xpath(this.locators.textField.orgName).type(newName);
+        cy.xpath(this.locators.textField.orgDescription).type(description);
+        cy.xpath(this.locators.button.submit).click();
+    }
+
+    deleteOrganization(orgName) {
+        cy.xpath("//p[text()='" + orgName + "']/../../..//div//p[text()='Delete']").click();
+        cy.xpath(this.locators.button.Yes).click();
+    }
 }
