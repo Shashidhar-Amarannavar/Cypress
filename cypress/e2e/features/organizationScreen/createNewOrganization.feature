@@ -10,9 +10,9 @@ Feature: Verifying organization module
 
     Examples:
       | message                                     | organization name | description                       | file location                |
-      | Organsiation has been created successfully. | Softsuave org     | Verify to create new organization | uploadFiles/profilePhoto.png |
-      | Organization already present                | Softsuave org     | Verify to create new organization | uploadFiles/profilePhoto.png |
-      | Please Upload Your Organization Logo!       | Softsuave org     | Verify to create new organization |                              |
+      | Organsiation has been created successfully. | Shashidhar org     | Verify to create new organization | uploadFiles/profilePhoto.png |
+      | Organization already present                | Shashidhar org     | Verify to create new organization | uploadFiles/profilePhoto.png |
+      | Please Upload Your Organization Logo!       | Shashidhar org     | Verify to create new organization |                              |
 
   @OrganizationScreen
   Scenario Outline: Edit the existing organization name
@@ -24,7 +24,7 @@ Feature: Verifying organization module
 
     Examples:
       | message                           | old name      | new name          | description          |
-      | Organisation updated successfully | Softsuave org | Softsuave new org | Changing description |
+      | Organisation updated successfully | Shashidhar org | Shashidhar new org | Changing description |
 
   @OrganizationScreen @regression
   Scenario Outline: Delete the organization and verify toast message
@@ -36,4 +36,4 @@ Feature: Verifying organization module
 
     Examples:
       | message                           | name              |
-      | Organisation Deleted Successfully | Softsuave new org |
+      | Organisation Deleted Successfully | Shashidhar new org |
