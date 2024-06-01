@@ -14,10 +14,10 @@ Feature: Verify login screen
 
     Examples:
       | email                                 | password    | message                        |
-      | shashidhar.amarannavar@softsuave.org  | Shashi#123  | Successfully logged in.        |
-      | shashidhar.amarannavar@softsuave.org  | Shashi#1231 | Wrong password entered.        |
-      | shashidhar.amarannavar1@softsuave.org | Shashi#123  | No user found. Please sign up. |
-      | shashidhar.amarannavar1@softsuave.org | Shashi#1231 | No user found. Please sign up. |
+      | shashidhar.amar  | Shashi#123  | Successfully logged in.        |
+      | shashidhar.amar  | Shashi#1231 | Wrong password entered.        |
+      | shashidhar.amar | Shashi#123  | No user found. Please sign up. |
+      | shashidhar.amar | Shashi#1231 | No user found. Please sign up. |
 
   @loginScreen @validationEmailAndPassword
   Scenario Outline: Verify the email and password textbox validation message
